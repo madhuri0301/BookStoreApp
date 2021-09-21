@@ -17,11 +17,11 @@ export class LoginSignupComponent implements OnInit {
   }
   showSignup(){
     this.signupShown = true;
-    this.router.navigateByUrl('register');
+    this.router.navigateByUrl('homepage/register');
   }
   showLogin(){
     this.signupShown = false;
-    this.router.navigateByUrl('login');
+    this.router.navigateByUrl('homepage/login');
   }
 
 }

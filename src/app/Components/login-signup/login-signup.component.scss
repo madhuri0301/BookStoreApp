@@ -29,6 +29,16 @@ h2 {
     font: normal normal medium Roboto;
     font-size: 24px;
   }
+  .underline {
+    background-color: #A03037;
+    height: 5px;
+    width: 22px;
+    align-self: center;
+    border-radius: 4px;
+  }
+  .gray-color{
+    color: #878787;
+  }
    
   .login-container {
     display: flex;

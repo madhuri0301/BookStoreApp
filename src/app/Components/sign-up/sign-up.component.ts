@@ -22,7 +22,8 @@ export class SignUpComponent implements OnInit {
       nameFull: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(12), Validators.pattern('[a-zA-Z ]*')]],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6), Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')]],
-      mobileNo: ['', [Validators.required, Validators.minLength(10)]]
+      mobileNo: ['', [Validators.required, Validators.minLength(10)]],
+      service: ['advance', Validators.required]
   })
 }
 get f() { return this.registerForm.controls; }
@@ -38,6 +39,7 @@ let data = {
   userEmail: this.registerForm.value.email,
   password: this.registerForm.value.password,
   phoneNumber: this.registerForm.value.mobileNo,
+  service:this.registerForm.value.service
 }
 console.log(data);
 }
