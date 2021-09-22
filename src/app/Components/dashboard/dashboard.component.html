@@ -1,0 +1,57 @@
+<div class="header" fxLayout.lt-md="column" fxLayout.md="column" 
+ fxLayout="row" fxFlex.md="50">
+    <div class="bookstorelogo" >
+        <img src="assets/education.svg" alt="bookstorelogo" >
+        <h3>Bookstore</h3>
+    </div>
+    <div class="searchbar" hide-xs show-gt-xs>
+      <div class="search">
+       
+        <mat-form-field appearance="outline" class="noWrapper">
+          <mat-icon matPrefix >search</mat-icon>  
+          <input matInput placeholder="Search" class="container">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="cart-and-profile">
+        <div class="profile" (click)=profileDialogShownToggle() >
+          <mat-icon >person_outline</mat-icon>
+          <p>Profile</p>
+          <div class="red-highight"></div>
+          <div [ngClass]="{'while-highight':profileDialogShown===true}"></div>
+        </div>
+        <div class="profileInfo" *ngIf=profileDialogShown>
+          <h4>Welcome</h4>
+          <div *ngIf="userSignedOff">
+            <p></p>
+            <!-- <button mat-stroked-button color="accent" (click)="SignOut()">Sign Out</button> -->
+          </div>
+          <div *ngIf="userSignedOff">
+            <p>To access account and manage orders</p>
+            <button mat-stroked-button color="accent" (click)="Login()">Login/Signup</button>
+          </div>
+          <div class="line">
+          </div>
+          <div class="wishlist">
+            <mat-icon >favorite_border</mat-icon>
+            <p> Wishlist </p>
+          </div>
+          <div class="my-orders" >
+            <mat-icon >folder_open</mat-icon>
+            <p> My orders </p>
+          </div>
+        </div>
+        <div class="cart" (click)=showCart()>
+          <mat-icon class="material-icons-outlined">shopping_cart</mat-icon>
+          <p>Cart</p>
+        </div>    
+    </div>
+  </div>
+  
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+  
+  <div class="footer">
+    Copyright &copy; 2021 Bookstore Private Limited All Rights Reserved
+  </div>

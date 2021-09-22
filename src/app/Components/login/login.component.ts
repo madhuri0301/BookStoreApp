@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/Services/user.service';
 
@@ -21,6 +21,15 @@ export class LoginComponent implements OnInit {
     private snackBar: MatSnackBar,
     private router: Router,
     private route: ActivatedRoute) { }
+
+    openSnackBar(message: string, duration: number) {
+      let config = new MatSnackBarConfig();
+      if (duration != 0)
+      {
+        config.duration = duration; 
+      }
+      this.snackBar.open(message, undefined, config);
+    } 
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -45,6 +54,9 @@ export class LoginComponent implements OnInit {
       password: this.loginForm.value.password
     }
     this.userService.login(requestData).subscribe(response => console.log(response));
+    this.openSnackBar('Login success', 2000);
+    this.router.navigate(['dashboard']);
+    // console.log(response);
 
   }
 
