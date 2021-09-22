@@ -7,6 +7,9 @@
     width:100%;
     display: flex;
  }
+ input{
+  width:100%;
+}
 body{
     background-color: #ADADAD;
 }
@@ -24,11 +27,11 @@ img{
     border-top-left-radius: 21px;
     border-bottom-left-radius: 21px;
 }
-h2 {
-    margin-top: 41px;
-    font: normal normal medium Roboto;
-    font-size: 24px;
-  }
+// h2 {
+//     margin-top: 41px;
+//     font: normal normal medium Roboto;
+//     font-size: 24px;
+//   }
   .underline {
     background-color: #A03037;
     height: 3px;
@@ -36,6 +39,7 @@ h2 {
     align-self: center;
     border-radius: 4px;
     margin-top: -10px;
+    margin-bottom: 20px;
   }
   .gray-color{
     color: #878787;
@@ -65,9 +69,10 @@ h2 {
     .login-and-underline {
     display: flex;
     flex-direction: column;
+
       h1 {
         font: normal normal medium Roboto;
-        font-size: 33px;     
+        font-size: 25px;     
       }
     }
   }
@@ -79,7 +84,7 @@ h2 {
     
       h1 {
         font: normal normal medium Roboto;
-        font-size: 33px;
+        font-size: 25px;
         margin-bottom: 10px;
       }
       

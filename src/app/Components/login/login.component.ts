@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
 
   constructor(private formBuilder: FormBuilder,
-    private user: UserService,
+    private userService : UserService,
     private snackBar: MatSnackBar,
     private router: Router,
     private route: ActivatedRoute) { }
@@ -25,8 +25,8 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      service: ['advance', Validators.required]
+      password: ['', [Validators.required, Validators.minLength(6)]]
+      
     });
   }
 
@@ -35,16 +35,16 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
+
     if (this.loginForm.invalid) {
       return;
     }
 
     let requestData = {
-      userEmail: this.loginForm.value.email,
-      Password: this.loginForm.value.password,
-      service: this.loginForm.value.service
+      email: this.loginForm.value.email,
+      password: this.loginForm.value.password
     }
-    console.log( requestData);
+    this.userService.login(requestData).subscribe(response => console.log(response));
 
   }
 

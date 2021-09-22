@@ -1,11 +1,11 @@
 <div>
-    <form id="registerForm" [formGroup]="registerForm" (ngSubmit)="submit()">
+    <form [formGroup]="registerForm">
         <div class="fullname">
             <span>Full Name</span>
             <mat-form-field appearance="outline" class="noWrapper">
-                <input matInput placeholder="" formControlName="nameFull" class="form-control"
-                    [ngClass]="{ 'is-invalid': submitted && f.nameFull.errors }" />
-                <mat-hint *ngIf="submitted && f.nameFull.errors">Enter your email id !</mat-hint>
+                <input matInput placeholder="" formControlName="fullName" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.fullName.errors }" />
+                <mat-hint *ngIf="submitted && f.fullName.errors">Enter your name!</mat-hint>
             </mat-form-field>
         </div>
         <div></div>
@@ -14,7 +14,7 @@
             <mat-form-field appearance="outline" class="noWrapper">
                 <input matInput placeholder="" formControlName="email" class="form-control"
                     [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
-                <mat-hint *ngIf="submitted && f.email.errors">Enter your email id !</mat-hint>
+                <mat-hint *ngIf="submitted && f.email.errors">Enter your email id!</mat-hint>
             </mat-form-field>
         </div>
         <div class="password-container paddingtop">
@@ -22,15 +22,15 @@
             <mat-form-field appearance="outline" class="noWrapper">
                 <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required>
                 <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                <mat-hint *ngIf="submitted && f.password.errors">Enter your password !</mat-hint>
+                <mat-hint *ngIf="submitted && f.password.errors">Enter your password!</mat-hint>
             </mat-form-field>
         </div>
         <div class="mobilenumber paddingtop">
             <span>Mobile Number</span>
             <mat-form-field appearance="outline" class="noWrapper">
-                <input matInput placeholder="" formControlName="mobileNo" class="form-control"
-                    [ngClass]="{ 'is-invalid': submitted && f.mobileNo.errors }" />
-                <mat-hint *ngIf="submitted && f.mobileNo.errors">Enter your mobile number !</mat-hint>
+                <input matInput placeholder="" formControlName="phone" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+                <mat-hint *ngIf="submitted && f.phone.errors">Enter your mobile number!</mat-hint>
             </mat-form-field>
 
         </div>
