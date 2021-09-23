@@ -2,8 +2,9 @@
     
 
     <div class="books-menu" fxLayout="row wrap" fxLayoutAlign="space-between center"  >
-        <div><span class="books">Books<span class="NBooks" *ngIf="BookQuanity != 0">&nbsp; 5 </span></span></div>
+        <div><span class="books">Books <sub class="count">(18)</sub> <span class="NBooks" *ngIf="BookQuanity != 0">&nbsp; 5 </span></span></div>
         <div class="sort">
+            
             <mat-form-field appearance="outline" >
             <select matNativeControl fxLayoutAlign="center center">
                 <option value="relevence">Sort by relevence</option>
@@ -19,7 +20,7 @@
           <!--  -->
           <div class="book " (click)="openDialog(Book)">
             <div class="book-image">
-              <img height="150px" width="150px"  src={{Book.bookImage}} alt="">
+              <img height="150px" width="150px"  src="assets/component (1).png" alt="">
             </div>
             <div class="book-description">
               <h2>{{Book.bookName}}</h2>
