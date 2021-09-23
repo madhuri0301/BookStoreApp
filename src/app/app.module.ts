@@ -17,6 +17,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
+import { GetAllBooksComponent } from './Components/get-all-books/get-all-books.component';
+import { DialogBoxComponent } from './Components/dialog-box/dialog-box.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -26,6 +29,8 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
     LoginComponent,
     SignUpComponent,
     DashboardComponent,
+    GetAllBooksComponent,
+    DialogBoxComponent,
 
   ],
   imports: [
@@ -39,7 +44,8 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
     ReactiveFormsModule,
     MatSnackBarModule,
     FlexLayoutModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule
 
   ],
   providers: [],
