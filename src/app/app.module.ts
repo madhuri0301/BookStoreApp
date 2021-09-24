@@ -18,8 +18,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { GetAllBooksComponent } from './Components/get-all-books/get-all-books.component';
-import { DialogBoxComponent } from './Components/dialog-box/dialog-box.component';
+
 import { MatDialogModule } from '@angular/material/dialog';
+import { CartComponent } from './Components/cart/cart.component';
+import { BookdetailsComponent } from './Components/bookdetails/bookdetails.component';
+import { HeaderComponent } from './Components/header/header.component';
 
 
 @NgModule({
@@ -30,7 +33,10 @@ import { MatDialogModule } from '@angular/material/dialog';
     SignUpComponent,
     DashboardComponent,
     GetAllBooksComponent,
-    DialogBoxComponent,
+    
+    CartComponent,
+         BookdetailsComponent,
+         HeaderComponent,
 
   ],
   imports: [

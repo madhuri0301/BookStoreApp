@@ -1,49 +1,49 @@
 <div class="book-container">
-    
 
-    <div class="books-menu" fxLayout="row wrap" fxLayoutAlign="space-between center"  >
-        <div><span class="books">Books <sub class="count">(18)</sub> <span class="NBooks" *ngIf="BookQuanity != 0">&nbsp; 5 </span></span></div>
-        <div class="sort">
-            
-            <mat-form-field appearance="outline" >
-            <select matNativeControl fxLayoutAlign="center center">
-                <option value="relevence">Sort by relevence</option>
-                <option value="L2H">Price: Low to High</option>
-                <option value="H2L">Price: High to Low</option>
-                <option value="NA">Newest Arrivals</option>
-            </select>
-            </mat-form-field>
+
+  <div class="books-menu" fxLayout="row wrap" fxLayoutAlign="space-between center">
+    <div><span class="books">Books <sub class="count">(16 items)</sub> <span class="NBooks" *ngIf="BookQuanity != 0">&nbsp; 5
+        </span></span></div>
+    <div class="sort">
+
+      <mat-form-field appearance="outline">
+        <select matNativeControl fxLayoutAlign="center center">
+          <option value="relevence">Sort by relevence</option>
+          <option value="L2H">Price: Low to High</option>
+          <option value="H2L">Price: High to Low</option>
+          <option value="NA">Newest Arrivals</option>
+        </select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="all-books-container">
+    <div class="all-books" *ngFor="let Book of booksArray">
+      <!--  -->
+      <div class="book " (click)="toProductPage(Book)">
+        <div class="book-image" fxLayoutAlign="center center">
+          <img  src="assets/Image 13.png" alt="">
         </div>
-      </div>
-      <div class="all-books-container">
-        <div class="all-books" *ngFor="let Book of booksArray">
-          <!--  -->
-          <div class="book " (click)="openDialog(Book)">
-            <div class="book-image">
-              <img height="150px" width="150px"  src="assets/component (1).png" alt="">
+        <div class="book-description">
+          <h2>{{Book.bookName}}</h2>
+          <p>by {{Book.author}}</p>
+          <div class="rating-container" fxLayout="row">
+            <div class="rating" fxLayout="row" fxLayoutAlign="center center">
+              4 <mat-icon class="star" fxFlexAlign="center">star</mat-icon>
             </div>
-            <div class="book-description">
-              <h2>{{Book.bookName}}</h2>
-              <p>by {{Book.authorName}}</p>
-              <div class="rating-container" fxLayout="row">
-                <div class="rating" fxLayout="row" fxLayoutAlign="center center">
-                  4 <mat-icon class="star" fxFlexAlign="center">star</mat-icon>
-                </div>
-                <div class="no-of-people-rated">
-                 (3)
-                </div>
-              </div>
-              <div class="price-container" fxLayout="row">
-                <div class="dicounted-price">
-                  <b>Rs. 200</b>
-                </div>
-                <div class="actual-price">
-                  Rs. {{Book.price}}
-                </div>
-              </div>
+            <div class="no-of-people-rated">
+              (3)
+            </div>
+          </div>
+          <div class="price-container" fxLayout="row">
+            <div class="dicounted-price">
+              <b>Rs. 200</b>
+            </div>
+            <div class="actual-price">
+              Rs. {{Book.price}}
             </div>
           </div>
         </div>
       </div>
-  
     </div>
+  </div>
+</div>

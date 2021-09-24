@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { BookService } from 'src/app/Services/book.service';
-import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
 
 @Component({
   selector: 'app-get-all-books',
@@ -14,7 +13,8 @@ export class GetAllBooksComponent implements OnInit {
 
   BookQuanity: number = 0;
   booksArray: any;
-  @Input() card: any
+  @Input() card: any;
+  id: any;
 
   constructor(private service: BookService, private router: Router, public dialog: MatDialog) { }
 
@@ -29,14 +29,8 @@ export class GetAllBooksComponent implements OnInit {
       console.log(this.booksArray);
     });
   }
-  openDialog(card: any) {
-    let diaLogRef = this.dialog.open(DialogBoxComponent, {
-      width: "700px",
-      maxWidth: "auto",
-      data: card
-
-    });
-    console.log(card)
+  toProductPage(id: any) {
+    this.id = id;
+    this.router.navigate(['/bookdetails'], { state: { value: id } })
   }
-
 }

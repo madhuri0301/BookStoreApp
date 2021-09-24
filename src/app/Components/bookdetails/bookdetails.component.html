@@ -1,0 +1,78 @@
+<div class="container">
+    <app-header></app-header>
+
+    <div class="main">
+        <div style="background-color: #FFFFFF; height: 5%; padding-top: 14px">
+            Home/books(16)
+        </div>
+
+        <div class="content">
+
+            <div class="small-books">
+                <img src="assets/small1.png">
+                <img src="assets/img46.png">
+            </div>
+
+
+            <div class="big-book">
+                <div class="imgCell">
+                    <img class="imgMain" src="assets/Image 13@2x.png">
+                </div>
+                <div class="alternateButton">
+                    <button style="width: 45%; background-color: #A03037;" mat-flat-button color="primary">ADD TO
+                        BAG</button>
+                    <button style="width: 45%; color:white; background-color: #333333;" mat-stroked-button> &#x2764;
+                        WISHLIST</button>
+                </div>
+            </div>
+
+            <div class="info">
+                <p class="description">{{data.description}}</p>
+                <p class="author">by {{data.author}}</p>
+                <div style="display: flex;">
+                    <div class="rate">
+                        <p style="color: white; margin: 0; width: 20px; height: 19px; text-align: left;
+                        font: normal normal bold 14px/19px Roboto;"> 4.5</p>
+                        <mat-icon class="star">grade</mat-icon>
+                    </div>
+                    <h5 class="quantity">({{data.quantity}})</h5>
+                </div>
+                
+                <p class="price"> Rs. {{data.price}}</p>
+
+
+              
+
+                <div class="details">
+                    <h4 class="heading">&#x25CF; Book Details</h4>
+                    <div class="bookContent">
+                        But it also makes it a bit confusing. The Bible itself is a book. 
+                        In fact, the word “bible” comes from the Latin and Greek words for 
+                        “book” (biblia and biblos, respectively). But it’s a book of books.
+                        That means if you want to know the Bible better.
+                        you’ll need to get acquainted with the 66 documents it comprises.
+                </div>
+
+
+                <div style="margin-top: 10px;">
+                    <h3>Feedback</h3>
+                    <div class="review">
+                        <h5 class="text">overall rating</h5>
+                        <div class="star" fxLayout="row">
+                            <img src="assets/start.svg" alt="">
+                            <img src="assets/start.svg" alt="">
+                            <img src="assets/start.svg" alt="">
+                            <img src="assets/start.svg" alt="">
+                            <img src="assets/start.svg" alt="">
+                        </div>
+                        <input class="searchInput" type="text" placeholder="write a review">
+                        <div>
+                            <button type="submit" class="button" mat-flat-button color="warn">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
