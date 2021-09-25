@@ -53,10 +53,17 @@ export class LoginComponent implements OnInit {
       email: this.loginForm.value.email,
       password: this.loginForm.value.password
     }
-    this.userService.login(requestData).subscribe(response => console.log(response));
-    // localStorage.setItem('Token', response['token']);
-    this.openSnackBar('Login success', 2000);
-    this.router.navigate(['dashboard/books']);
+    this.userService.login(requestData).subscribe((response:any)=>
+    {
+        console.log(response);
+        localStorage.setItem('Token',response.result.accessToken);
+        this.router.navigate(['dashboard']);
+
+    })
+    // this.userService.login(requestData).subscribe(response => console.log(response));
+    
+    // this.openSnackBar('Login success', 2000);
+   
     // console.log(response);
 
   }

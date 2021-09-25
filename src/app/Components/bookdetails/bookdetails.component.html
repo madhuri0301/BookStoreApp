@@ -3,7 +3,8 @@
 
     <div class="main">
         <div style="background-color: #FFFFFF; height: 5%; padding-top: 14px">
-            Home/books(16)
+            <!-- Home/books(16) -->
+            <span class="home" routerLink="/dashboard">Home /</span><span class="book-id"> Book</span>
         </div>
 
         <div class="content">
@@ -16,10 +17,10 @@
 
             <div class="big-book">
                 <div class="imgCell">
-                    <img class="imgMain" src="assets/Image 13@2x.png">
+                    <img class="imgMain" src="assets/Image 11@2x.png">
                 </div>
                 <div class="alternateButton">
-                    <button style="width: 45%; background-color: #A03037;" mat-flat-button color="primary">ADD TO
+                    <button style="width: 45%; background-color: #A03037;" mat-flat-button color="primary" (click)="addToCart()">ADD TO
                         BAG</button>
                     <button style="width: 45%; color:white; background-color: #333333;" mat-stroked-button> &#x2764;
                         WISHLIST</button>

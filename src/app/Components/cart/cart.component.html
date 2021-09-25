@@ -1,127 +1,127 @@
 <div class="cart-container">
-    <div class="cart-header">
-      <h2  >My Cart (1)</h2>
-      <mat-form-field appearance="outline" fxLayout="row">
-        <!-- <div class="icon">
-          <mat-icon>place</mat-icon>  
-        </div> -->
-        <select matNativeControl fxLayoutAlign="center center">
-          <option value="relevence">
-              
-              Use current location</option>
-        </select>
-        </mat-form-field>
+  <div class="cart-header">
+    <h2  >My Cart (1)</h2>
+    <mat-form-field appearance="outline" fxLayout="row">
+      <!-- <div class="icon">
+        <mat-icon>place</mat-icon>  
+      </div> -->
+      <select matNativeControl fxLayoutAlign="center center">
+        <option value="relevence">
+            
+            Use current location</option>
+      </select>
+      </mat-form-field>
+  </div>
+  <div class="cart-info-container"  *ngFor="let Book of getBook" >
+    <div class="image-container">
+  <img width="150" class="center" height="150" src={{Book.bookImage}} alt=""> 
+      <!-- <img width="150" class="center" height="150" src="../../../assets/loginsignup.png" alt=""> -->
     </div>
-    <div class="cart-info-container"  *ngFor="let Book of getBook" >
-      <div class="image-container">
-    <img width="150" class="center" height="150" src={{Book.bookImage}} alt=""> 
-        <!-- <img width="150" class="center" height="150" src="../../../assets/loginsignup.png" alt=""> -->
-      </div>
-      <div class="increase-quantity-container">
-        <div class="book-description">
-          <h2>{{Book.bookName}}</h2>
-          <p>by {{Book.authorName}}</p>
-          <div class="price-container" fxLayout="row">
-            <div class="dicounted-price">
-              <b>Rs. 200</b>
-            </div>
-            <div class="actual-price">
-               Rs. {{Book.price}} 
-            </div>
+    <div class="increase-quantity-container">
+      <div class="book-description">
+        <h2>{{Book.bookName}}</h2>
+        <p>by {{Book.authorName}}</p>
+        <div class="price-container" fxLayout="row">
+          <div class="dicounted-price">
+            <b>Rs. 200</b>
+          </div>
+          <div class="actual-price">
+             Rs. {{Book.price}} 
           </div>
         </div>
-        <div class="increase-quantity">
-          <div class="decrease-button" (click)="quantity=quantity-1">
-            <mat-icon>remove</mat-icon>
-          </div>
-          <!-- <input type="text" class="input-quantity" value=1 [(ngModel)]="quantity"/> -->
-          <!-- 
-          <mat-form-field appearance="outline" class="noWrapper" >
-            <input matInput placeholder="" class="form-control"/>
-          </mat-form-field> -->
-          <div class="increase-button" (click)="quantity=quantity+1">
-            <mat-icon>add</mat-icon>
-          </div>
-          <div class="remove-container">
-           Remove
-          </div>
+      </div>
+      <div class="increase-quantity">
+        <div class="decrease-button" (click)="quantity=quantity-1">
+          <mat-icon>remove</mat-icon>
+        </div>
+        <!-- <input type="text" class="input-quantity" value=1 [(ngModel)]="quantity"/> -->
+        <!-- 
+        <mat-form-field appearance="outline" class="noWrapper" >
+          <input matInput placeholder="" class="form-control"/>
+        </mat-form-field> -->
+        <div class="increase-button" (click)="quantity=quantity+1">
+          <mat-icon>add</mat-icon>
+        </div>
+        <div class="remove-container">
+         Remove
         </div>
       </div>
     </div>
   </div>
-  <div class="customer-details-container">
-    <div class="customer-details-header">
-      <h2>Customer Details</h2>
-      <button mat-stroked-button class="address-color">Add New Address</button>
-    </div>
-    <div class="input-fields-container">
-      <div class="personal-details-container">
-        <div class="full-name-container">
-          <span>Full Name</span>
-          <input type="text" class="text-input">
-        </div>
-        <div class="mobile-container">
-          <span>Mobile Number</span>
-          <input type="text" class="text-input">
-        </div>
-      </div>
-      <div class="address-container">
-        <span>Address</span>
-        <textarea name="" id="" cols="30" rows="5" class="text-input"></textarea>
-      </div>
-      <div class="address-details-container">
-        <div class="city-town-container">
-          <span>City/Town</span>
-          <input type="text" class="text-input">
-        </div>
-        <div class="mobile-container">
-          <span>State</span>
-          <input type="text" class="text-input">
-        </div>
-      </div>
-      <div class="type-container">
-        <span>Type</span>
-        <div class="radio-buttons-container">
-          <input type="radio" name="type" id="home">
-        <label for="home">Home</label>
-        <input type="radio" name="type" id="work">
-        <label for="home">Work</label>
-        <input type="radio" name="type" id="other">
-        <label for="home">Other</label>
-        </div>
-        <!-- <mat-radio-group aria-label="Select an option">
-          <mat-radio-button value="1">Option 1</mat-radio-button>
-          <mat-radio-button value="2">Option 2</mat-radio-button>
-          <mat-radio-button value="3">Option 2</mat-radio-button>
-        </mat-radio-group> -->
-      </div>
-    </div>
-    
+</div>
+<div class="customer-details-container">
+  <div class="customer-details-header">
+    <h2>Customer Details</h2>
+    <button mat-stroked-button class="address-color">Add New Address</button>
   </div>
-  <div class="cart-container">
-    <div class="cart-header">
-      <h2>Order Summary</h2>
-    </div>
-    <div class="cart-info-container"  *ngFor="let Book of getBook" >
-      <div class="image-container">
-        <img width="150" class="center" height="150" src={{Book.bookImage}} alt=""> 
+  <div class="input-fields-container">
+    <div class="personal-details-container">
+      <div class="full-name-container">
+        <span>Full Name</span>
+        <input type="text" class="text-input">
       </div>
-      <div class="increase-quantity-container">
-        <div class="book-description">
-          <h2>{{Book.bookName}}</h2>
-          <p>by {{Book.authorName}}</p>
-          <div class="price-container" fxLayout="row">
-            <div class="dicounted-price">
-              <b>Rs. 100</b>
-            </div>
-            <div class="actual-price">
-              Rs. {{Book.price}}
-            </div>
+      <div class="mobile-container">
+        <span>Mobile Number</span>
+        <input type="text" class="text-input">
+      </div>
+    </div>
+    <div class="address-container">
+      <span>Address</span>
+      <textarea name="" id="" cols="30" rows="5" class="text-input"></textarea>
+    </div>
+    <div class="address-details-container">
+      <div class="city-town-container">
+        <span>City/Town</span>
+        <input type="text" class="text-input">
+      </div>
+      <div class="mobile-container">
+        <span>State</span>
+        <input type="text" class="text-input">
+      </div>
+    </div>
+    <div class="type-container">
+      <span>Type</span>
+      <div class="radio-buttons-container">
+        <input type="radio" name="type" id="home">
+      <label for="home">Home</label>
+      <input type="radio" name="type" id="work">
+      <label for="home">Work</label>
+      <input type="radio" name="type" id="other">
+      <label for="home">Other</label>
+      </div>
+      <!-- <mat-radio-group aria-label="Select an option">
+        <mat-radio-button value="1">Option 1</mat-radio-button>
+        <mat-radio-button value="2">Option 2</mat-radio-button>
+        <mat-radio-button value="3">Option 2</mat-radio-button>
+      </mat-radio-group> -->
+    </div>
+  </div>
+  
+</div>
+<div class="cart-container">
+  <div class="cart-header">
+    <h2>Order Summary</h2>
+  </div>
+  <div class="cart-info-container"  *ngFor="let Book of getBook" >
+    <div class="image-container">
+      <img width="150" class="center" height="150" src={{Book.bookImage}} alt=""> 
+    </div>
+    <div class="increase-quantity-container">
+      <div class="book-description">
+        <h2>{{Book.bookName}}</h2>
+        <p>by {{Book.authorName}}</p>
+        <div class="price-container" fxLayout="row">
+          <div class="dicounted-price">
+            <b>Rs. 100</b>
+          </div>
+          <div class="actual-price">
+            Rs. {{Book.price}}
           </div>
         </div>
-        <div class="checkout-button">
-          <button mat-raised-button class="checkout">Checkout</button>
-        </div>
+      </div>
+      <div class="checkout-button">
+        <button mat-raised-button class="checkout">Checkout</button>
       </div>
     </div>
   </div>
+</div>

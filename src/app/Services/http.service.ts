@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
@@ -7,6 +7,7 @@ import { environment } from 'src/environments/environment';
 })
 export class HttpService {
   baseUrl = environment.baseUrl;
+  token:any;
 
   constructor(private http: HttpClient) { }
 
@@ -17,5 +18,27 @@ export class HttpService {
   getallBook(url:any){
     return this.http.get(this.baseUrl + url);
   }
+ 
+  addToCart(url: any, data: any) {
+    this.token = localStorage.getItem('Token');
+    let options = {
+      headers: new HttpHeaders({
+        'x-access-token': this.token,
+        'Content-Type': 'application/json'
+      })
+    }
+    return this.http.post(this.baseUrl + url, data, options);
+  }
+  getCarts(url:any){
+    this.token = localStorage.getItem('Token');
+    let options = {
+      headers: new HttpHeaders({
+        'x-access-token': this.token,
+        'Content-Type': 'application/json'
+      })
+    }
+    return this.http.get(this.baseUrl + url, options);
+  }
+ 
 }
 

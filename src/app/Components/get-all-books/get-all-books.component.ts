@@ -16,13 +16,13 @@ export class GetAllBooksComponent implements OnInit {
   @Input() card: any;
   id: any;
 
-  constructor(private service: BookService, private router: Router, public dialog: MatDialog) { }
+  constructor(private bookservice: BookService, private router: Router, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getBooks();
   }
   getBooks() {
-    this.service.getallBook('bookstore_user/get/book').subscribe((response: any) => {
+    this.bookservice.getallBook('bookstore_user/get/book').subscribe((response: any) => {
       console.log(response);
       this.booksArray = response.result;
       // this.booksArray.reverse();

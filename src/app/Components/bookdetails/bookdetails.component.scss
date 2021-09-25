@@ -12,6 +12,13 @@
     background-color: #FFFFFF;
     margin: 0px 253px 0px 253px;
 }
+.home{
+    text-align: left;
+    font: normal normal normal 12px/16px Roboto;
+    letter-spacing: 0px;
+    color: #9D9D9D;
+    cursor: pointer;
+}
 
 .content{
    background-color: #FFFFFF; height: 93%; display: flex; flex-direction: row;
@@ -58,16 +65,16 @@
 //     margin-left: 100px;
 //     width: 50%;
 // }
-// .description{
-//     width: 100%;
-//     height: 37px;
-//     text-align: left;
-//     font: normal normal normal 28px/37px Roboto;
-//     letter-spacing: 0px;
-//     color: #0A0102;
-//     opacity: 1;
-//     margin: 0%;
-// }
+.description{
+    width: 100%;
+    height: 37px;
+    text-align: left;
+    font: normal normal normal 28px/37px Roboto;
+    letter-spacing: 0px;
+    color: #0A0102;
+    opacity: 1;
+    margin: 0%;
+}
 
 .author{
     width: 214px;

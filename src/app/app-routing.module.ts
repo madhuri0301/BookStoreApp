@@ -1,6 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BookdetailsComponent } from './Components/bookdetails/bookdetails.component';
+import { CartComponent } from './Components/cart/cart.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { GetAllBooksComponent } from './Components/get-all-books/get-all-books.component';
 import { LoginSignupComponent } from './Components/login-signup/login-signup.component';
@@ -16,10 +17,13 @@ const routes: Routes = [
   },
   { path: 'dashboard', component: DashboardComponent,
     children: [
+      { path: '', redirectTo: 'books', pathMatch: 'full' },
       { path: 'books', component: GetAllBooksComponent },
+      
     ],
   },
-  {path: 'bookdetails', component: BookdetailsComponent}
+  {path: 'bookdetails', component: BookdetailsComponent},
+ 
 ];
 
 @NgModule({
