@@ -23,7 +23,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { CartComponent } from './Components/cart/cart.component';
 import { BookdetailsComponent } from './Components/bookdetails/bookdetails.component';
 import { HeaderComponent } from './Components/header/header.component';
-
+import {MatRadioModule} from '@angular/material/radio'
 
 @NgModule({
   declarations: [
@@ -51,7 +51,8 @@ import { HeaderComponent } from './Components/header/header.component';
     MatSnackBarModule,
     FlexLayoutModule,
     HttpClientModule,
-    MatDialogModule
+    MatDialogModule,
+    MatRadioModule
 
   ],
   providers: [],

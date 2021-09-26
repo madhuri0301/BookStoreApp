@@ -39,6 +39,15 @@ export class HttpService {
     }
     return this.http.get(this.baseUrl + url, options);
   }
- 
+  // get(url:string, isHeaderRequired:any = false, token: any = null) {
+  //   console.log("data got");
+  //   let tokenOption = { headers: new HttpHeaders({"x-access-token": token})};
+  //   return this.http.get(url, isHeaderRequired && tokenOption)
+  // }
+  put(url: string, data: any, isHeaderRequired: any = false, token: any = null) {  
+    console.log("putting add"+ url, token);
+    let tokenOption = {headers: new HttpHeaders({"x-access-token": token})};
+    return this.http.put(url, data, isHeaderRequired && tokenOption)
+  }
 }
 

@@ -19,6 +19,7 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'books', pathMatch: 'full' },
       { path: 'books', component: GetAllBooksComponent },
+      { path: 'cart',component: CartComponent},
       
     ],
   },

@@ -1,127 +1,138 @@
-<div class="cart-container">
-  <div class="cart-header">
-    <h2  >My Cart (1)</h2>
-    <mat-form-field appearance="outline" fxLayout="row">
-      <!-- <div class="icon">
-        <mat-icon>place</mat-icon>  
-      </div> -->
-      <select matNativeControl fxLayoutAlign="center center">
-        <option value="relevence">
-            
-            Use current location</option>
-      </select>
-      </mat-form-field>
+<div class="main">
+  <div style="background-color: #FFFFFF; height: 5%; padding-top: 14px">
+    <span class="home" routerLink="/dashboard">Home /</span><span class="book-id"> My cart</span>
   </div>
-  <div class="cart-info-container"  *ngFor="let Book of getBook" >
-    <div class="image-container">
-  <img width="150" class="center" height="150" src={{Book.bookImage}} alt=""> 
-      <!-- <img width="150" class="center" height="150" src="../../../assets/loginsignup.png" alt=""> -->
-    </div>
-    <div class="increase-quantity-container">
-      <div class="book-description">
-        <h2>{{Book.bookName}}</h2>
-        <p>by {{Book.authorName}}</p>
-        <div class="price-container" fxLayout="row">
-          <div class="dicounted-price">
-            <b>Rs. 200</b>
+  <!-- Books details -->
+
+  <div class="container">
+    <div class="cart">
+      <div>
+        <h3>My Cart({{getBooks.length}})</h3>
+        <ng-container *ngFor="let getBook of getBooks">
+          <div class="book" style=" flex-direction: row;">
+            <img src="assets/Image 11.png">
+            <div style="margin-left: 20px;">
+              <h4 style="width: 300px; margin-bottom: 0;">{{getBook.product_id.description}}</h4>
+              <h5 style="margin-bottom: 5px; color: #9D9D9D;">by {{getBook.product_id.author}}</h5>
+              <span style="font: normal normal bold 15px/18px Lato;
+                      letter-spacing: 0px;
+                      color: #0A0102;
+                      opacity: 1;">Rs. {{getBook.product_id.price}}</span>
+              <h5 style="cursor: pointer;">Remove</h5>
+            </div>
           </div>
-          <div class="actual-price">
-             Rs. {{Book.price}} 
+        </ng-container>
+      </div>
+
+      <div class="placeOrder">
+        <div class="location">
+          <div style="display: flex;align-items: flex-end;">
+            <mat-icon> pin_drop</mat-icon> Use current location
+          </div>
+          <mat-icon>expand_more</mat-icon>
+        </div>
+        <div class="order" *ngIf="displayButton" (click)="addressToggles()">
+          PLACE ORDER
+        </div>
+        <div *ngIf="!displayButton">
+
+        </div>
+      </div>
+
+    </div>
+    <!-- Address -->
+    <div class="address" *ngIf="displayAddress">
+      <span>Address Details</span>
+    </div>
+
+    <form class="custermerAddress" *ngIf="!displayAddress" [formGroup]="contactForm">
+      <div style=" width: 75%;">
+        <h2 class="details">Customer Details</h2>
+        <div style="display: flex; justify-content: space-between;">
+          <div>
+            <h4 style="margin: 0px;" class="textName">Full Name</h4>
+            <mat-form-field appearance="outline" class="placewidth">
+              <input matInput placeholder="" formControlName="fullName">
+            </mat-form-field>
+          </div>
+          <div>
+            <h4 style="margin: 0px;" class="textName">Mobile Number</h4>
+            <mat-form-field appearance="outline" class="placewidth">
+              <input matInput placeholder="" formControlName="phone">
+            </mat-form-field>
+          </div>
+        </div>
+        <div style="margin-top: 20px;">
+          <h4 style="margin: 0px;" class="textName">Address</h4>
+          <mat-form-field appearance="outline" class="addressWidth">
+            <input matInput placeholder="" formControlName="fullAddress">
+          </mat-form-field>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-top: 35px;">
+          <div>
+            <h4 style="margin: 0px;" class="textName">City/town</h4>
+            <mat-form-field appearance="outline" class="placewidth">
+              <input matInput placeholder="" formControlName="city">
+            </mat-form-field>
+          </div>
+          <div>
+            <h4 style="margin: 0px;" class="textName">State</h4>
+            <mat-form-field appearance="outline" class="placewidth">
+              <input matInput placeholder="" formControlName="state">
+            </mat-form-field>
+          </div>
+        </div>
+        <div>
+          <h4 style="margin-top: 10px;" class="textName">Type</h4>
+          <mat-radio-group formControlName="addressType">
+            <mat-radio-button class="example-margin" value="Home">Home</mat-radio-button>
+            <mat-radio-button class="example-margin" value="Office">Office</mat-radio-button>
+            <mat-radio-button class="example-margin" value="Other">Other</mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; justify-content: space-between;">
+        <div class="newAddress" *ngIf=" displayContinueButton">
+          <span style="color: #A03037; padding: 20px 0px 20px 19px;">Add New Address</span>
+        </div>
+        <div>
+          <div class="continue" (click)="submit()" *ngIf="displayContinueButton">
+            Continue
           </div>
         </div>
       </div>
-      <div class="increase-quantity">
-        <div class="decrease-button" (click)="quantity=quantity-1">
-          <mat-icon>remove</mat-icon>
-        </div>
-        <!-- <input type="text" class="input-quantity" value=1 [(ngModel)]="quantity"/> -->
-        <!-- 
-        <mat-form-field appearance="outline" class="noWrapper" >
-          <input matInput placeholder="" class="form-control"/>
-        </mat-form-field> -->
-        <div class="increase-button" (click)="quantity=quantity+1">
-          <mat-icon>add</mat-icon>
-        </div>
-        <div class="remove-container">
-         Remove
-        </div>
+      <div *ngIf="!displayContinueButton">
+
       </div>
-    </div>
-  </div>
-</div>
-<div class="customer-details-container">
-  <div class="customer-details-header">
-    <h2>Customer Details</h2>
-    <button mat-stroked-button class="address-color">Add New Address</button>
-  </div>
-  <div class="input-fields-container">
-    <div class="personal-details-container">
-      <div class="full-name-container">
-        <span>Full Name</span>
-        <input type="text" class="text-input">
-      </div>
-      <div class="mobile-container">
-        <span>Mobile Number</span>
-        <input type="text" class="text-input">
-      </div>
-    </div>
-    <div class="address-container">
-      <span>Address</span>
-      <textarea name="" id="" cols="30" rows="5" class="text-input"></textarea>
-    </div>
-    <div class="address-details-container">
-      <div class="city-town-container">
-        <span>City/Town</span>
-        <input type="text" class="text-input">
-      </div>
-      <div class="mobile-container">
-        <span>State</span>
-        <input type="text" class="text-input">
-      </div>
-    </div>
-    <div class="type-container">
-      <span>Type</span>
-      <div class="radio-buttons-container">
-        <input type="radio" name="type" id="home">
-      <label for="home">Home</label>
-      <input type="radio" name="type" id="work">
-      <label for="home">Work</label>
-      <input type="radio" name="type" id="other">
-      <label for="home">Other</label>
-      </div>
-      <!-- <mat-radio-group aria-label="Select an option">
-        <mat-radio-button value="1">Option 1</mat-radio-button>
-        <mat-radio-button value="2">Option 2</mat-radio-button>
-        <mat-radio-button value="3">Option 2</mat-radio-button>
-      </mat-radio-group> -->
-    </div>
-  </div>
+    </form>
   
-</div>
-<div class="cart-container">
-  <div class="cart-header">
-    <h2>Order Summary</h2>
+     <!-- summary -->
+     <div class="address" *ngIf="displayCart">
+      <span>Order Summary</span>
   </div>
-  <div class="cart-info-container"  *ngFor="let Book of getBook" >
-    <div class="image-container">
-      <img width="150" class="center" height="150" src={{Book.bookImage}} alt=""> 
-    </div>
-    <div class="increase-quantity-container">
-      <div class="book-description">
-        <h2>{{Book.bookName}}</h2>
-        <p>by {{Book.authorName}}</p>
-        <div class="price-container" fxLayout="row">
-          <div class="dicounted-price">
-            <b>Rs. 100</b>
-          </div>
-          <div class="actual-price">
-            Rs. {{Book.price}}
-          </div>
-        </div>
+  <div class="cart" *ngIf="!displayCart">            
+      <div>
+          <ng-container *ngFor="let getBook of getBooks">
+              <div class="book" style=" flex-direction: row;">
+                  <img src="assets/Image 11.png">
+                  <div style="margin-left: 20px;">
+                      <h4 style="width: 300px; margin-bottom: 0;">{{getBook.product_id.description}}</h4>
+                      <h5 style="margin-bottom: 5px; color: #9D9D9D;">by {{getBook.product_id.author}}</h5>
+                      <span style="font: normal normal bold 15px/18px Lato;
+                      letter-spacing: 0px;
+                      color: #0A0102;
+                      opacity: 1;">Rs. {{getBook.product_id.price}}</span>
+                  </div>
+              </div>
+             
+          </ng-container>
       </div>
-      <div class="checkout-button">
-        <button mat-raised-button class="checkout">Checkout</button>
+      
+      <div class="checkoutOrder">
+          <div (click)="checkout()" class="order">
+              CHEACKOUT
+          </div>
       </div>
-    </div>
+      
   </div>
 </div>
