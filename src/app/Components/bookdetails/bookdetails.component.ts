@@ -57,5 +57,19 @@ export class BookdetailsComponent implements OnInit {
         console.log(error);
       })
   }
+  addWishList() {
+    let data = {
+      product_id: this.data._id,
+    }
+    console.log(data)
+    this.cart.addToWishlist(data).subscribe((response: any) => {
+      console.log(response);
+      this.snackBar.open('Book Added To WishList', 'close')._dismissAfter(2000);
+    },
+      (error: any) => {
+        this.snackBar.open('Error while adding book to WishList', 'close')._dismissAfter(2000);
+        console.log(error);
+      })
+  }
 
 }

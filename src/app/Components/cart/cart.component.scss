@@ -40,11 +40,31 @@
   display: flex;
 }
 
-img{
-  width: 65px;
-  height: 85px;
-  background: transparent 0% 0% no-repeat padding-box;
-  opacity: 1;
+.quantity {
+  width: 30%;
+
+  .circle {
+      height          : 20px;
+      width           : 20px;
+      border-radius   : 50%;
+      background-color: transparent;
+      border          : 1px solid gray;
+      text-align      : center;
+      cursor          : pointer;
+
+      img {
+          width: 16px;
+      }
+    }
+  
+
+  .decreaseQty {
+      margin-right: 5px;
+  }
+
+  .IncreaseQty {
+      margin-left: 6px;
+  }
 }
 
 .location{

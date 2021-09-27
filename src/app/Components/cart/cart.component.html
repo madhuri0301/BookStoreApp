@@ -17,8 +17,28 @@
               <span style="font: normal normal bold 15px/18px Lato;
                       letter-spacing: 0px;
                       color: #0A0102;
-                      opacity: 1;">Rs. {{getBook.product_id.price}}</span>
-              <h5 style="cursor: pointer;">Remove</h5>
+                      opacity: 1;">Rs. {{getBook.product_id.price}}
+              </span>
+
+              <div class="quantity" fxLayout="row" fxLayoutAlign="space-between center">
+
+
+
+                <div class="  circle decreaseQty" fxLayoutAlign="center">
+                  <img src="assets/add.svg" alt="decreaseQty">
+                </div>
+                <div >
+                  1
+                  </div>
+                <div fxLayoutAlign="center" class=" circle IncreaseQty">
+                  <img src="assets/remove.svg" alt="IncreaseQty">
+                </div>
+              
+
+              <button mat-button (click)="removeItem(getBook)">
+                Remove
+              </button>
+              </div>
             </div>
           </div>
         </ng-container>
@@ -27,16 +47,15 @@
       <div class="placeOrder">
         <div class="location">
           <div style="display: flex;align-items: flex-end;">
-            <mat-icon> pin_drop</mat-icon> Use current location
+            <mat-icon> pin_drop</mat-icon>
+            Use current location
           </div>
           <mat-icon>expand_more</mat-icon>
         </div>
         <div class="order" *ngIf="displayButton" (click)="addressToggles()">
           PLACE ORDER
         </div>
-        <div *ngIf="!displayButton">
-
-        </div>
+        <div *ngIf="!displayButton"></div>
       </div>
 
     </div>
@@ -105,34 +124,34 @@
 
       </div>
     </form>
-  
-     <!-- summary -->
-     <div class="address" *ngIf="displayCart">
+
+    <!-- summary -->
+    <div class="address" *ngIf="displayCart">
       <span>Order Summary</span>
-  </div>
-  <div class="cart" *ngIf="!displayCart">            
+    </div>
+    <div class="cart" *ngIf="!displayCart">
       <div>
-          <ng-container *ngFor="let getBook of getBooks">
-              <div class="book" style=" flex-direction: row;">
-                  <img src="assets/Image 11.png">
-                  <div style="margin-left: 20px;">
-                      <h4 style="width: 300px; margin-bottom: 0;">{{getBook.product_id.description}}</h4>
-                      <h5 style="margin-bottom: 5px; color: #9D9D9D;">by {{getBook.product_id.author}}</h5>
-                      <span style="font: normal normal bold 15px/18px Lato;
+        <ng-container *ngFor="let getBook of getBooks">
+          <div class="book" style=" flex-direction: row;">
+            <img src="assets/Image 11.png">
+            <div style="margin-left: 20px;">
+              <h4 style="width: 300px; margin-bottom: 0;">{{getBook.product_id.description}}</h4>
+              <h5 style="margin-bottom: 5px; color: #9D9D9D;">by {{getBook.product_id.author}}</h5>
+              <span style="font: normal normal bold 15px/18px Lato;
                       letter-spacing: 0px;
                       color: #0A0102;
                       opacity: 1;">Rs. {{getBook.product_id.price}}</span>
-                  </div>
-              </div>
-             
-          </ng-container>
-      </div>
-      
-      <div class="checkoutOrder">
-          <div (click)="checkout()" class="order">
-              CHEACKOUT
+            </div>
           </div>
+
+        </ng-container>
       </div>
-      
+
+      <div class="checkoutOrder">
+        <div (click)="checkout()" class="order">
+          CHEACKOUT
+        </div>
+      </div>
+    </div>
   </div>
 </div>

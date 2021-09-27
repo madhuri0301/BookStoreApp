@@ -92,7 +92,15 @@ export class CartComponent implements OnInit {
         console.log(error);
       });
   }
-
+  removeItem=(data: any)=>{
+    // console.log(data._id)
+    this.cart.deleteItem(data._id, this.token).subscribe((data:any)=>{
+      this.getCarts()
+    },
+    error => {
+      console.log(error);
+    });
+  }
   submit() {
     console.log(this.contactForm.value);
     let result = {
@@ -137,14 +145,14 @@ export class CartComponent implements OnInit {
     let OD={
       orders: orders
     }
-    // console.log(OD)
-    // this.cart.order(OD, this.token).subscribe((response:any)=>{
-    //   console.log(response)
-    //   this.router.navigate(['/orderplaced']);
-    // },
-    // error => {
-    //   console.log(error);
-    // });
+    console.log(OD)
+    this.cart.order(OD, this.token).subscribe((response:any)=>{
+      console.log(response)
+      this.router.navigate(['/order']);
+    },
+    error => {
+      console.log(error);
+    });
   }
 }
 

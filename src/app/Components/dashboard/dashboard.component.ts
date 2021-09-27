@@ -27,6 +27,9 @@ export class DashboardComponent implements OnInit {
   showCart(){
     this.route.navigate(['dashboard/cart']);
   }
+  getwishlist(){
+    this.route.navigate(['dashboard/wishlist']);
+  }
   
 }
 

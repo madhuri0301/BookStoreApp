@@ -28,4 +28,23 @@ export class CartService {
   // communicateMessage(msg: any) {
   //   this.sendMessage.next(msg)
   // }
+  order = (data: any, token: any) => {
+    // console.log(data, token)
+    return this.http.Postt(`${this.url}bookstore_user/add/order`, data, true, token);
+  } 
+  addToWishlist(data:any){
+    return this.http.addToCart(`bookstore_user/add_wish_list/${data.product_id}` ,data);
+  }
+ 
+  deleteItem = (data: any, token: any) => {
+    console.log(data, token)
+    return this.http.delete(`${this.url}bookstore_user/remove_cart_item/${data}`, true, token)
+  }
+  getWishlist = (token: any) => {
+    return this.http.get(`${this.url}bookstore_user/get_wishlist_items`, true, token)
+  }
+  deleteWishlist = (data: any, token: any) => {
+    console.log(data, token)
+    return this.http.delete(`${this.url}bookstore_user/remove_wishlist_item/${data}`, true, token)
+  }
 }

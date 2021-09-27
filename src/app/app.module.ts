@@ -23,7 +23,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { CartComponent } from './Components/cart/cart.component';
 import { BookdetailsComponent } from './Components/bookdetails/bookdetails.component';
 import { HeaderComponent } from './Components/header/header.component';
-import {MatRadioModule} from '@angular/material/radio'
+import {MatRadioModule} from '@angular/material/radio';
+import { OrderComponent } from './Components/order/order.component';
+import { WishlistComponent } from './Components/wishlist/wishlist.component'
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import {MatRadioModule} from '@angular/material/radio'
     CartComponent,
     BookdetailsComponent,
     HeaderComponent,
+    OrderComponent,
+    WishlistComponent,
 
   ],
   imports: [
