@@ -16,9 +16,17 @@ export class GetAllBooksComponent implements OnInit {
   @Input() card: any;
   id: any;
 
+  searchWord: any;
+
   constructor(private bookservice: BookService, private router: Router, public dialog: MatDialog) { }
 
   ngOnInit(): void {
+
+    this.bookservice.rcvSearch.subscribe((response: any) => {
+      this.searchWord = response;
+      // this.totalLength = response.length;
+    });
+  
     this.getBooks();
   }
   getBooks() {

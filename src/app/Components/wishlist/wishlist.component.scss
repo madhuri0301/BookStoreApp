@@ -4,6 +4,12 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border: 1px solid red;
+}
+.home-wishlist{
+    background-color: #FFFFFF;
+    height: 5%; 
+    margin-top: 25px;
 }
 
 .main{
@@ -24,8 +30,12 @@
     border: 1px solid #d1d0d0;
     border-radius: 1px;
     padding: 10px 30px 10px 30px;
-    display: flex;
-    justify-content: space-between;
+    // display: flex;
+    // justify-content: space-between;
+    width: 100%;
+}
+.cart2{
+    width: 100%;
 }
 
 .book{
@@ -40,3 +50,19 @@
 .remove{
     margin-top: 35px;
 }
+@media only screen and (max-width: 599px) {
+// .cart{
+//     margin-left: 2px;
+//     width: 100%;
+//     border: none;
+// }
+// .main{
+//     margin-left: -5px;
+// }
+// .remove{
+//     margin-left: 20px;
+// }
+// .home-wishlist{
+//     margin-left: 20px;
+// }
+ }

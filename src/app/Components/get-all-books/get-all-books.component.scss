@@ -1,99 +1,110 @@
 .mat-icon {
-    vertical-align: middle;
-  }
-  .mat-form-field-wrapper {
-    background-color: white !important;
-  }
-  .count{
-      font-size: 15px;
-      color: gray
-  }
+  vertical-align: middle;
+}
+.mat-form-field-wrapper {
+  background-color: white !important;
+}
+.count{
+    font-size: 15px;
+    color: gray
+}
+.book-container{
+  //display: flex;
+  padding:10px;
+  margin-left: 150px;
+  margin-right:100px;
+ // flex-wrap: wrap;
+}
+.books{
+  font-size: x-large;
+  margin-left: 10px;
+}
+.all-books-container{
+  display: flex;
+  flex-wrap: wrap;
+  // margin-left: 10px;
+}
+.book { 
+  cursor: pointer;
+  margin:10px;
+  width:230px;
+  border:1px solid #E2E2E2;
+    .book-image { 
+    padding-top:20px;
+    // padding-bottom: 17px;
+    // padding-left: 60px;
+    // padding-right: 40px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color:#F5F5F5;
+       
+    }
+
+    .book-description { 
+    cursor: pointer;
+    padding-left:20px;
+        h2 { 
+      white-space: nowrap; 
+      overflow: hidden;
+      text-overflow: ellipsis; 
+      margin-bottom: 2px;
+        }
+
+        p { 
+      margin-bottom: 2px;
+        }
+
+        .rating-container { 
+      
+            .rating { 
+              width: 40px;
+              flex-direction:  row;
+        display: flex;
+        justify-content: center;
+        align-content: center; 
+        text-align: center; 
+        background-color: #388E3C;
+        border-radius: 1px;
+        padding:2px;
+        color:white;
+        .star{
+          margin-top: 8px;
+          margin-left: 2px;
+          font-size: small;
+          vertical-align: middle !important;
+        }
+            }
+
+            .no-of-people-rated { 
+        margin-top: 5px;
+        margin-left: 5px;
+        color:gray;
+            }
+        }
+
+        .price-container { 
+            .dicounted-price { 
+        margin-top: 10px;
+        font-size: large;
+            }
+            .actual-price {
+        margin-top: 10px;
+        margin-left: 5px; 
+        text-decoration: line-through;
+        color: gray;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 599px){
   .book-container{
-    //display: flex;
-    padding:10px;
-    margin-left: 150px;
-    margin-right:100px;
-   // flex-wrap: wrap;
+    margin-left: 50px;
   }
   .books{
-    font-size: x-large;
-    margin-left: 10px;
+    margin-left: 45px;
   }
-  .all-books-container{
-    display: flex;
-    flex-wrap: wrap;
-    // margin-left: 10px;
+  .mat-form-field{
+    margin-left: 30px;
   }
-  .book { 
-    cursor: pointer;
-    margin:10px;
-    width:230px;
-    border:1px solid #E2E2E2;
-      .book-image { 
-      padding-top:20px;
-      // padding-bottom: 17px;
-      // padding-left: 60px;
-      // padding-right: 40px;
-      display: flex;
-      justify-content: center;
-      align-content: center;
-      background-color:#F5F5F5;
-         
-      }
-  
-      .book-description { 
-      cursor: pointer;
-      padding-left:20px;
-          h2 { 
-        white-space: nowrap; 
-        overflow: hidden;
-        text-overflow: ellipsis; 
-        margin-bottom: 2px;
-          }
-  
-          p { 
-        margin-bottom: 2px;
-          }
-  
-          .rating-container { 
-        
-              .rating { 
-                width: 40px;
-                flex-direction:  row;
-          display: flex;
-          justify-content: center;
-          align-content: center; 
-          text-align: center; 
-          background-color: #388E3C;
-          border-radius: 1px;
-          padding:2px;
-          color:white;
-          .star{
-            margin-top: 8px;
-            margin-left: 2px;
-            font-size: small;
-            vertical-align: middle !important;
-          }
-              }
-  
-              .no-of-people-rated { 
-          margin-top: 5px;
-          margin-left: 5px;
-          color:gray;
-              }
-          }
-  
-          .price-container { 
-              .dicounted-price { 
-          margin-top: 10px;
-          font-size: large;
-              }
-              .actual-price {
-          margin-top: 10px;
-          margin-left: 5px; 
-          text-decoration: line-through;
-          color: gray;
-              }
-          }
-      }
-  }
+}

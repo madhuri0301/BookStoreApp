@@ -110,7 +110,7 @@
   padding-left: 30px;
 }
 
-.custermerAddress{
+.customerAddress{
   width: 774px;
   height: 486px;
   background: #FFFFFF 0% 0% no-repeat padding-box;
@@ -209,3 +209,35 @@
   }
 
 }
+@media only screen and (max-width: 599px) {
+
+  .cart{
+    display: flex;
+    flex-direction: column;
+    margin-left: -65px;
+    width: 125%;
+    
+    
+  }
+ 
+ .order{
+   margin-top: 20px;
+   margin-left: 160px;
+ }
+ .address{
+   width: 138%;
+   margin-left: -65px;
+ }
+ .container{
+   margin-right: 20px;
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+ }
+ .home{
+   margin-left: -40px;
+ }
+ 
+}
+
+  

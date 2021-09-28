@@ -1,3 +1,4 @@
+
 <div class="main">
   <div style="background-color: #FFFFFF; height: 5%; padding-top: 14px">
     <span class="home" routerLink="/dashboard">Home /</span><span class="book-id"> My cart</span>
@@ -9,7 +10,7 @@
       <div>
         <h3>My Cart({{getBooks.length}})</h3>
         <ng-container *ngFor="let getBook of getBooks">
-          <div class="book" style=" flex-direction: row;">
+          <div class="book" fxLayout= "row" >
             <img src="assets/Image 11.png">
             <div style="margin-left: 20px;">
               <h4 style="width: 300px; margin-bottom: 0;">{{getBook.product_id.description}}</h4>
@@ -45,7 +46,7 @@
       </div>
 
       <div class="placeOrder">
-        <div class="location">
+        <div class="location" fxHide.lt-md>
           <div style="display: flex;align-items: flex-end;">
             <mat-icon> pin_drop</mat-icon>
             Use current location
@@ -64,7 +65,7 @@
       <span>Address Details</span>
     </div>
 
-    <form class="custermerAddress" *ngIf="!displayAddress" [formGroup]="contactForm">
+    <form class="customerAddress" *ngIf="!displayAddress" [formGroup]="contactForm">
       <div style=" width: 75%;">
         <h2 class="details">Customer Details</h2>
         <div style="display: flex; justify-content: space-between;">

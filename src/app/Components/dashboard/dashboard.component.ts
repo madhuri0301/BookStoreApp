@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { BookService } from 'src/app/Services/book.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,10 +11,16 @@ export class DashboardComponent implements OnInit {
   profileDialogShown:boolean = false;
   userSignedOff:boolean = true;
 
-  constructor(private route:Router) { }
+  isSearch=false;
+
+  constructor(private route:Router,private bookService : BookService) { }
 
   ngOnInit(): void {
   }
+  shareSearchWord(search: any) {
+    this.bookService.sendSearch(search);
+  }
+ 
   profileDialogShownToggle(){
     this.profileDialogShown = ! this.profileDialogShown;
   }
@@ -30,7 +37,9 @@ export class DashboardComponent implements OnInit {
   getwishlist(){
     this.route.navigate(['dashboard/wishlist']);
   }
-  
+  myprofile(){
+    this.route.navigate(['dashboard/myprofile'])
+  }
 }
 
 

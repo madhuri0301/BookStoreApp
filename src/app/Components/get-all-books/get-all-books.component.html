@@ -17,7 +17,7 @@
     </div>
   </div>
   <div class="all-books-container">
-    <div class="all-books" *ngFor="let Book of booksArray">
+    <div class="all-books" *ngFor="let Book of booksArray| searchBook: searchWord">
       <!--  -->
       <div class="book " (click)="toProductPage(Book)">
         <div class="book-image" fxLayoutAlign="center center">

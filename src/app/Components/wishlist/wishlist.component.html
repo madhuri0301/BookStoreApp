@@ -1,13 +1,11 @@
-<div class="container">
-    
-
+<!-- <div class="container"> -->
     <div class="main">
-        <div style="background-color: #FFFFFF; height: 5%; padding-top: 14px">
-            <span class="home" routerLink="/dashboard">Home /</span><span class="book-id"> My WishList</span>
+        <div class="home-wishlist">
+            <span class="home" routerLink="/dashboard">Home /</span><span> My WishList</span>
         </div>
         <div class="cart">            
-            <div style="width: 100%;">
-                <h3>My Cart({{wishlistBook.length}})</h3>
+            <div class="cart2">
+                <!-- <h3>My Cart({{wishlistBook.length}})</h3> -->
                 <ng-container *ngFor="let list of wishlistBook" >
                     <div style="display: flex; justify-content: space-between;" >
                         <div class="book" style=" flex-direction: row;">
@@ -30,4 +28,4 @@
             </div>
         </div>
     </div>
-</div>
+

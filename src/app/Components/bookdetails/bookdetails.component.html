@@ -1,79 +1,82 @@
-<div class="container">
+<div fxLayout="column">
+
     <app-header></app-header>
+    <section class="mainSection" fxFlex.lt-sm=50 fxLayout="column">
+        <section class="header">
+            <div class="breadCrumb">
+                <span class="home" routerLink="/dashboard">Home /</span><span class="book-id"> Books(16)</span>
+            </div>
+        </section>
 
-    <div class="main">
-        <div style="background-color: #FFFFFF; height: 5%; padding-top: 14px">
-            <!-- Home/books(16) -->
-            <span class="home" routerLink="/dashboard">Home /</span><span class="book-id"> Book</span>
-        </div>
+        <section class="mainContent" fxLayout="row" fxLayoutAlign="center none" fxLayout.lt-sm="column"
+            fxLayoutAlign.lt-sm="center center">
+            <div class="imagePart" fxLayout="column" fxLayoutAlign="none center">
+                <div class="image" fxLayoutAlign="center center">
+                   <img src="assets/Image 11@2x.png" alt="bookImage">
+                </div>
 
-        <div class="content">
+                <div class="buttons" fxLayoutAlign="space-between center">
+                    <button (click)="addToCart()" class="btn">add to bag</button>
 
-            <div class="small-books">
-                <img src="assets/small1.png">
-                <img src="assets/img46.png">
+
+
+                    <button (click)="addWishList()" class="btn wishlt" fxLayoutAlign="center center">
+                        <span><img src="assets/star_white.svg" alt=""></span>
+                        wishlist
+                    </button>
+                </div>
             </div>
 
-
-            <div class="big-book">
-                <div class="imgCell">
-                    <img class="imgMain" src="assets/Image 11@2x.png">
-                </div>
-                <div class="alternateButton">
-                    <button style="width: 45%; background-color: #A03037;" mat-flat-button color="primary" (click)="addToCart()">ADD TO
-                        BAG</button>
-                    <button style="width: 45%; color:white; background-color: #333333;" mat-stroked-button="primary" (click)="addWishList()"> &#x2764;
-                        WISHLIST</button>
-                </div>
-            </div>
-
-            <div class="info">
-                <p class="description">{{data.description}}</p>
-                <p class="author">by {{data.author}}</p>
-                <div style="display: flex;">
-                    <div class="rate">
-                        <p style="color: white; margin: 0; width: 20px; height: 19px; text-align: left;
-                        font: normal normal bold 14px/19px Roboto;"> 4.5</p>
-                        <mat-icon class="star">grade</mat-icon>
-                    </div>
-                    <h5 class="quantity">({{data.quantity}})</h5>
-                </div>
-                
-                <p class="price"> Rs. {{data.price}}</p>
-
-
-              
-
-                <div class="details">
-                    <h4 class="heading">&#x25CF; Book Details</h4>
-                    <div class="bookContent">
-                        But it also makes it a bit confusing. The Bible itself is a book. 
-                        In fact, the word “bible” comes from the Latin and Greek words for 
-                        “book” (biblia and biblos, respectively). But it’s a book of books.
-                        That means if you want to know the Bible better.
-                        you’ll need to get acquainted with the 66 documents it comprises.
-                </div>
-
-
-                <div style="margin-top: 10px;">
-                    <h3>Feedback</h3>
-                    <div class="review">
-                        <h5 class="text">overall rating</h5>
-                        <div class="star" fxLayout="row">
-                            <img src="assets/start.svg" alt="">
-                            <img src="assets/start.svg" alt="">
-                            <img src="assets/start.svg" alt="">
-                            <img src="assets/start.svg" alt="">
-                            <img src="assets/start.svg" alt="">
+            <div class="bookDetails">
+                <div class="basicDetails" fxLayout="column">
+                    <span class="bookName"> {{data.description}} </span>
+                    <span class="author">by {{data.author}}</span>
+                    <div class="ratingPart" fxLayout="row" fxLayoutAlign="none center">
+                        <div class="ratings" fxLayout="row" fxLayoutAlign="center center">
+                            <span class="rate">{{data.rating}}</span>
+                            <span class="num" style="color: white;">4<img src="assets/star_white.svg" alt="rating"></span>
                         </div>
-                        <input class="searchInput" type="text" placeholder="write a review">
                         <div>
-                            <button type="submit" class="button" mat-flat-button color="warn">Submit</button>
+                            <span class="review"> (20)</span>
                         </div>
                     </div>
+
+                    <div class="pricePart">
+                        <span class="currPrice">Rs. {{data.price}}</span>
+                        <span class="actPrice">Rs. 2000</span>
+                    </div>
+                </div>
+                <hr>
+                <div class="description">
+                    <ul class="heading">
+                        <li> Book detail</li>
+                    </ul>
+                    <p>{{data.description}}
+                    </p>
+                </div>
+                <hr>
+
+                <div class="FeedBack">
+                    <span class="heading">Customer FeedBack</span>
+
+                    <div class="feedbackInput" fxLayout="column">
+                        <span class="ratingHeading">Overall Rating</span>
+                        <div class="stars">
+                            <img src="assets/star.svg" alt="rating">
+                            <img src="assets/star.svg" alt="rating">
+                            <img src="assets/star.svg" alt="rating">
+                            <img src="assets/star.svg" alt="rating">
+                            <img src="assets/star.svg" alt="rating">
+                        </div>
+                        <textarea name="rating" id="" cols="30" rows="5"></textarea>
+                        <div fxLayoutAlign="end center">
+                            <button class="btn">Submit</button>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
-        </div>
-    </div>
-
+        </section>
+    </section>
 </div>

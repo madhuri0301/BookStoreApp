@@ -30,5 +30,8 @@ export class HeaderComponent implements OnInit {
   getwishlist(){
     this.route.navigate(['dashboard/wishlist'])
   }
+  myprofile(){
+    this.route.navigate(['dashboard/myprofile'])
+  }
 
 }

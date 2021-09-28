@@ -25,7 +25,10 @@ import { BookdetailsComponent } from './Components/bookdetails/bookdetails.compo
 import { HeaderComponent } from './Components/header/header.component';
 import {MatRadioModule} from '@angular/material/radio';
 import { OrderComponent } from './Components/order/order.component';
-import { WishlistComponent } from './Components/wishlist/wishlist.component'
+import { WishlistComponent } from './Components/wishlist/wishlist.component';
+import { MyprofileComponent } from './Components/myprofile/myprofile.component';
+import { PersonalDetailsComponent } from './Components/personal-details/personal-details.component';
+import { SearchBookPipe } from './Pipe/search-book.pipe'
 
 @NgModule({
   declarations: [
@@ -41,6 +44,9 @@ import { WishlistComponent } from './Components/wishlist/wishlist.component'
     HeaderComponent,
     OrderComponent,
     WishlistComponent,
+    MyprofileComponent,
+    PersonalDetailsComponent,
+    SearchBookPipe,
 
   ],
   imports: [

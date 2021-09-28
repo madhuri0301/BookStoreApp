@@ -1,3 +1,4 @@
+<!-- <app-header></app-header> -->
 <div class="header">
   <div class="bookstorelogo">
     <img src="assets/education.svg" alt="bookstorelogo">
@@ -8,7 +9,7 @@
 
       <mat-form-field appearance="outline" class="noWrapper">
         <mat-icon matPrefix>search</mat-icon>
-        <input matInput placeholder="Search" class="container">
+        <input matInput placeholder="Search" class="container" #search (keyup)="shareSearchWord(search.value)">
       </mat-form-field>
     </div>
   </div>
@@ -20,17 +21,16 @@
       <div [ngClass]="{'while-highight':profileDialogShown===true}"></div>
     </div>
     <div class="profileInfo" *ngIf=profileDialogShown>
-      <h4>Welcome</h4>
-      <div *ngIf="userSignedOff">
+      <h4>Hello Shreya</h4>
+      <!-- <div *ngIf="userSignedOff">
         <p></p>
-        <!-- <button mat-stroked-button color="accent" (click)="SignOut()">Sign Out</button> -->
+        <button mat-stroked-button color="accent" (click)="SignOut()">Sign Out</button>
+      </div> -->
+      <div class="wishlist" style="margin-top: 10px;" >
+        <mat-icon>person_outline</mat-icon>
+        <p style="cursor: pointer" (click)="myprofile()">My Profile </p>
       </div>
-      <div *ngIf="userSignedOff">
-        <p>To access account and manage orders</p>
-        <button mat-stroked-button color="accent" (click)="Login()">Login/Signup</button>
-      </div>
-      <div class="line">
-      </div>
+    
       <div class="wishlist"  >
         <mat-icon>favorite_border</mat-icon>
         <p (click)="getwishlist()"style="cursor: pointer"> Wishlist </p>
@@ -38,6 +38,10 @@
       <div class="my-orders">
         <mat-icon>folder_open</mat-icon>
         <p> My orders </p>
+      </div>
+      <div *ngIf="userSignedOff">
+        <!-- <p>To access account and manage orders</p> -->
+        <button mat-stroked-button color="accent" (click)="Login()">Logout</button>
       </div>
     </div>
     <div class="cart" (click)=showCart()>
@@ -51,6 +55,6 @@
   <router-outlet></router-outlet>
 </div>
 
-<div class="footer">
+<!-- <div class="footer">
   Copyright &copy; 2021 Bookstore Private Limited All Rights Reserved
-</div>
+</div> -->
