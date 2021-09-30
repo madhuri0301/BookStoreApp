@@ -16,6 +16,11 @@ export class BookdetailsComponent implements OnInit {
   card: any
   bookId: any;
 
+  componentproperty: any;
+  comment: any;
+  formdata: any;
+  currentVal: any;
+
   constructor(private router: Router,
     private snackBar: MatSnackBar,
     public cart: CartService,
@@ -23,6 +28,11 @@ export class BookdetailsComponent implements OnInit {
 
     this.data = this.router.getCurrentNavigation()?.extras.state;
     console.log(this.data)
+  }
+
+  getVal(val:any) {
+    console.warn(val);
+    this.currentVal=val
   }
 
   ngOnInit(): void {

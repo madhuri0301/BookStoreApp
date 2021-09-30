@@ -12,7 +12,7 @@
             fxLayoutAlign.lt-sm="center center">
             <div class="imagePart" fxLayout="column" fxLayoutAlign="none center">
                 <div class="image" fxLayoutAlign="center center">
-                   <img src="assets/Image 11@2x.png" alt="bookImage">
+                    <img src="assets/Image 11@2x.png" alt="bookImage">
                 </div>
 
                 <div class="buttons" fxLayoutAlign="space-between center">
@@ -34,7 +34,8 @@
                     <div class="ratingPart" fxLayout="row" fxLayoutAlign="none center">
                         <div class="ratings" fxLayout="row" fxLayoutAlign="center center">
                             <span class="rate">{{data.rating}}</span>
-                            <span class="num" style="color: white;">4<img src="assets/star_white.svg" alt="rating"></span>
+                            <span class="num" style="color: white;">4<img src="assets/star_white.svg"
+                                    alt="rating"></span>
                         </div>
                         <div>
                             <span class="review"> (20)</span>
@@ -62,20 +63,16 @@
                     <div class="feedbackInput" fxLayout="column">
                         <span class="ratingHeading">Overall Rating</span>
                         <div class="stars">
-                            <img src="assets/star.svg" alt="rating">
-                            <img src="assets/star.svg" alt="rating">
-                            <img src="assets/star.svg" alt="rating">
-                            <img src="assets/star.svg" alt="rating">
-                            <img src="assets/star.svg" alt="rating">
+                            <app-star></app-star>
                         </div>
-                        <textarea name="rating" id="" cols="30" rows="5"></textarea>
+                        <textarea matInput class="searchInput" type="text" placeholder="write a review"
+                        style="width: 570px;height: 70px;" name="comment" #box></textarea>
                         <div fxLayoutAlign="end center">
-                            <button class="btn">Submit</button>
+                            <button class="btn" (click)="getVal(box.value)">Submit</button>
                         </div>
                     </div>
-
-
                 </div>
+                <h2>{{currentVal}}</h2>
             </div>
         </section>
     </section>

@@ -47,4 +47,7 @@ export class CartService {
     console.log(data, token)
     return this.http.delete(`${this.url}bookstore_user/remove_wishlist_item/${data}`, true, token)
   }
+   feedback(data:any){
+    return this.http.Postt(`​bookstore_user​/add​/feedback​/${data.product_id}` ,data);
+  }
 }

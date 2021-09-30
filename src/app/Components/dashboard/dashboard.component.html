@@ -45,6 +45,8 @@
       </div>
     </div>
     <div class="cart" (click)=showCart()>
+      <span matBadgeOverlap=false [matBadge]="badgeContent" [matBadgeHidden]="badgeContent==0"
+                    matBadgeSize="small"></span>
       <mat-icon class="material-icons-outlined">shopping_cart</mat-icon>
       <p>Cart</p>
     </div>

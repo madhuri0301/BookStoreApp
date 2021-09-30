@@ -28,7 +28,9 @@ import { OrderComponent } from './Components/order/order.component';
 import { WishlistComponent } from './Components/wishlist/wishlist.component';
 import { MyprofileComponent } from './Components/myprofile/myprofile.component';
 import { PersonalDetailsComponent } from './Components/personal-details/personal-details.component';
-import { SearchBookPipe } from './Pipe/search-book.pipe'
+import { SearchBookPipe } from './Pipe/search-book.pipe';
+import { StarComponent } from './Components/star/star.component'
+import {MatBadgeModule} from '@angular/material/badge';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { SearchBookPipe } from './Pipe/search-book.pipe'
     MyprofileComponent,
     PersonalDetailsComponent,
     SearchBookPipe,
+    StarComponent,
+   
 
   ],
   imports: [
@@ -62,7 +66,8 @@ import { SearchBookPipe } from './Pipe/search-book.pipe'
     FlexLayoutModule,
     HttpClientModule,
     MatDialogModule,
-    MatRadioModule
+    MatRadioModule,
+    MatBadgeModule
 
   ],
   providers: [],

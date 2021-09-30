@@ -12,6 +12,7 @@ export class DashboardComponent implements OnInit {
   userSignedOff:boolean = true;
 
   isSearch=false;
+  badgeContent = 0;
 
   constructor(private route:Router,private bookService : BookService) { }
 
